@@ -7,7 +7,7 @@ const Input = () => {
        <h1 className="font-medium text-3xl">EMB-AI BRD Studio</h1>
      <p className="text-sm">This app generates a comprehensive Business Requirements Document (BRD) based on your inputs. Fill in the fields below and click 'Generate BRD' to create your document.</p>
       <p>Form Completion: /4 fields</p>
-      <p>ghii</p>
+     
     </div>
   )
 }
