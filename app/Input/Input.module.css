@@ -1,0 +1,76 @@
+.generate-brd *{
+    line-height:1.2;
+}
+.generated-brd h1,
+.generated-brd h2,
+.generated-brd h3,
+.generated-brd h4,
+.generated-brd h5,
+.generated-brd h6 {
+  font-weight:bold;
+  line-height:1.5;
+  margin-top: 1rem; 
+  margin-bottom: 0.5rem
+}
+
+.generated-brd h1 {
+  font-size: 2.5rem;
+}
+
+.generated-brd h2 {
+  font-size: 2rem;
+}
+
+.generated-brd h3 {
+  font-size: 1.75rem;
+}
+
+.generated-brd h4 {
+  font-size: 1.5rem;
+}
+
+.generated-brd h5 {
+  font-size: 1.25rem;
+}
+
+.generated-brd h6 {
+  font-size: 1rem;
+}
+.generated-brd p { 
+    line-height: 1.5; 
+    margin-top: 0.5rem;
+     margin-bottom: 0.5rem; 
+}
+.generated-brd ul, .generated-brd ol {
+     /* margin-top: 0.5rem; 
+     margin-bottom: 0.5rem; */
+      line-height: 1.2;
+     }
+
+.generated-brd li {
+     /* margin-bottom: 0.25rem;  */
+    }
+
+
+.generated-brd table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.generated-brd th,
+.generated-brd td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.generated-brd th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.generated-brd tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

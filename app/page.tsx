@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Input from "./Input";
+import Input from "./Input/page";
+
 
 export default function Home() {
   return (
