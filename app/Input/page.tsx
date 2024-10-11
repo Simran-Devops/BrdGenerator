@@ -36,6 +36,11 @@ const Input = () => {
     const [brdPart3, setBrdPart3] = useState("");
     const [brdPart4, setBrdPart4] = useState("");
 
+
+    const [currentPart, setCurrentPart] = useState(0);
+    const [progress, setProgress] = useState(0);
+
+
     const handleClientToggle = (e: any) => {
         if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
             setClientIsExpanded(!isClientExpanded);
@@ -73,6 +78,7 @@ const Input = () => {
     const totalFields = 4;
 
     const generateBRD = async () => {
+
         if (!clientName || !projectRequirements || !Users || !Deliverables) {
             alert("please fill in all fields before generating the BRD");
             return;
@@ -93,8 +99,9 @@ const Input = () => {
           Types of users:${Users}
           Project Deliverables:${Deliverables}
           Include the follwing sections:
-            1.Confidentiality Agreement: Use the following agreement:
-            ${confidentialityAgreement}
+           
+            1. Confidentiality Agreement: Use the following agreement as is, without duplicating the heading:
+${confidentialityAgreement}
             
             2. Executive Summary: 
       - Provide a brief overview of the project, its objectives, key stakeholders & deliverables.
@@ -221,10 +228,11 @@ const Input = () => {
 
             await new Promise<void>((resolve) => {
                 stream.on('end', () => {
+                    setProgress((prevProgress) => prevProgress + 25);
+                    setCurrentPart((prevPart) => prevPart + 1);
                     resolve();
                 });
             });
-
             return responseText;
         } catch (error) {
             console.error('Error generating BRD part:', error);
@@ -363,11 +371,30 @@ const Input = () => {
                 >
                     Generate BRD
                 </button>
-                {isGenerating && (
-                    <div className="mt-8">
-                        <p className="text-lg">Generating BRD...</p>
-                    </div>
-                )}
+{isGenerating && (
+  <div className="mt-4">
+    <p className="text-lg">Generating BRD...</p>
+    <div className="w-full h-2 bg-gray-300 rounded-full mt-2">
+      <div
+        className="h-2 bg-blue-600 rounded-full"
+        style={{ width: `${progress}%` }}
+      ></div>
+    </div>
+    {currentPart!=0 && currentPart <= 4 && (
+      <p className="text-md mt-2">
+        {currentPart === 4
+          ? 'Part 4 is being generated'
+          : `Part ${currentPart} generated, Part ${currentPart + 1} is being generated`}
+      </p>
+    )}
+  </div>
+)}
+{!isGenerating && progress === 100 && (
+  <div className="mt-4">
+    <div className="w-full h-2 bg-blue-600 rounded-full"></div>
+    <p className="text-md mt-2">BRD generated completely</p>
+  </div>
+)}
                 {generatedBRD && (
                     <div className="mt-8">
                         <div className="p-4 rounded-md overflow-x-auto">

@@ -1,24 +1,24 @@
-.generate-brd *{
-    line-height:1.2;
+
+.generated-brd * {
+  line-height: 1.2;
 }
+
 .generated-brd h1,
 .generated-brd h2,
 .generated-brd h3,
 .generated-brd h4,
 .generated-brd h5,
 .generated-brd h6 {
-  font-weight:bold;
-  line-height:1.5;
-  margin-top: 1rem; 
-  margin-bottom: 0.5rem
+  font-weight:800;
+  line-height: 1.2;
 }
 
 .generated-brd h1 {
-  font-size: 2.5rem;
+  font-size :3rem;
 }
 
 .generated-brd h2 {
-  font-size: 2rem;
+  font-size: 1.9rem;
 }
 
 .generated-brd h3 {
@@ -36,41 +36,73 @@
 .generated-brd h6 {
   font-size: 1rem;
 }
-.generated-brd p { 
-    line-height: 1.5; 
-    margin-top: 0.5rem;
-     margin-bottom: 0.5rem; 
+
+.generated-brd p {
+  line-height: 1.5;
 }
-.generated-brd ul, .generated-brd ol {
-     /* margin-top: 0.5rem; 
-     margin-bottom: 0.5rem; */
-      line-height: 1.2;
-     }
+
+.generated-brd ul,
+.generated-brd ol {
+  line-height: 1;
+  padding-left: 1.5rem;
+}
 
 .generated-brd li {
-     /* margin-bottom: 0.25rem;  */
-    }
-
+  margin-bottom: 0.5rem;
+}
 
 .generated-brd table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .generated-brd th,
 .generated-brd td {
-  padding: 0.75rem;
+  padding: 1rem;
   text-align: left;
   border: 1px solid #ddd;
+
 }
 
 .generated-brd th {
-  background-color: #f2f2f2;
   font-weight: bold;
+  background-color: #f2f2f2;
 }
+
 
 .generated-brd tr:nth-child(even) {
   background-color: #f9f9f9;
+
+}
+
+.generated-brd pre {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+}
+
+.generated-brd code {
+  font-family: monospace;
+  font-size: 1rem;
+  background-color: #f4f4f4;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.generated-brd blockquote {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-left: 4px solid #ccc;
+}
+
+.generated-brd hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
